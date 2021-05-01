@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
+import { Layout } from "antd";
 import * as React from "react";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import SEO from "../components/atm.seo/seo";
 
 const NotFoundPage = () => (
 	<Layout>

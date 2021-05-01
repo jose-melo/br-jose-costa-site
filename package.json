@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-typescript",
+  "name": "br-jose-costa-site",
   "private": true,
-  "description": "TypeScript version of the default Gatsby starter",
+  "description": "Personal website",
   "version": "0.1.0",
-  "author": "Jongwoo Han <han980817@gmail.com>",
+  "author": "Jose Costa <melocosta.joselucas@gmail.com>",
   "dependencies": {
+    "antd": "^4.13.1",
     "eslint-loader": "^3.0.4",
     "gatsby": "^2.20.24",
     "gatsby-image": "^2.2.39",
@@ -18,7 +19,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -26,6 +28,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
     "@types/react-test-renderer": "^16.9.2",
+    "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
     "babel-jest": "^25.3.0",
@@ -60,7 +63,7 @@
     "test": "jest"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/jongwooo/gatsby-starter-typescript"
+    "type": "",
+    "url": ""
   }
 }

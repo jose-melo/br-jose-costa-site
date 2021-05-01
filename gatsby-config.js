@@ -1,8 +1,8 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Starter TypeScript`,
-		description: `TypeScript version of the default Gatsby starter`,
-		author: `@jongwooo`
+		title: `Homepage José Lucas`,
+		description: `Página pessoal do Zé!`,
+		author: `@josemelocosta`
 	},
 	plugins: [
 		`gatsby-plugin-eslint`,

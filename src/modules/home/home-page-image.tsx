@@ -2,6 +2,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import styled from "styled-components";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -14,10 +15,14 @@ import Img from "gatsby-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image: React.FC = () => {
+interface JoseImageProps {
+	size: number;
+}
+
+const JoseImage: React.FunctionComponent<JoseImageProps> = props => {
 	const data = useStaticQuery(graphql`
 		query {
-			placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+			jose: file(relativePath: { eq: "jose.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 300) {
 						...GatsbyImageSharpFluid
@@ -27,7 +32,25 @@ const Image: React.FC = () => {
 		}
 	`);
 
-	return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+	return (
+		<Img
+			imgStyle={{
+				height: "100%",
+				width: "100%"
+			}}
+			style={{
+				maxWidth: `${props.size}px`,
+				display: "block",
+				width: "100%",
+				marginLeft: "auto",
+				marginRight: "auto",
+				marginTop: "2em"
+			}}
+			fluid={data.jose.childImageSharp.fluid}
+		/>
+	);
 };
 
-export default Image;
+export const JoseImageStyled = styled(JoseImage)``;
+
+export default JoseImageStyled;
