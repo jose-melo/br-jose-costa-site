@@ -22,7 +22,7 @@ interface JoseImageProps {
 const JoseImage: React.FunctionComponent<JoseImageProps> = props => {
 	const data = useStaticQuery(graphql`
 		query {
-			jose: file(relativePath: { eq: "jose.png" }) {
+			jose: file(relativePath: { eq: "png/jose.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 300) {
 						...GatsbyImageSharpFluid

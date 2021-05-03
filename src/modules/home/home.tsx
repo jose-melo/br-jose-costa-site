@@ -3,7 +3,6 @@ import Grid from "antd/lib/card/Grid";
 import Layout from "antd/lib/layout/layout";
 import React from "react";
 import { GrayColor } from "../../utils/ui/color";
-import { Contact } from "../../components/atm.contact/contact";
 import { Content } from "../../components/atm.content/content";
 import { JoseImageStyled } from "./home-page-image";
 import { Link } from "../../components/atm.link/link";
