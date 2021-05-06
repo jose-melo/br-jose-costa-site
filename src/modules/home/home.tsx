@@ -9,7 +9,7 @@ import { Link } from "../../components/atm.link/link";
 import { Paragraph } from "../../components/atm.paragraph/paragraph";
 import { BubbleLink } from "../links/link-bubble.style";
 
-export const HomeDetails: React.FunctionComponent = props => {
+const HomeDetails: React.FunctionComponent = props => {
 	return (
 		<Layout>
 			<Content>
@@ -46,3 +46,5 @@ export const HomeDetails: React.FunctionComponent = props => {
 		</Layout>
 	);
 };
+
+export default HomeDetails;

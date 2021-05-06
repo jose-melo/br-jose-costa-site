@@ -11,7 +11,7 @@ import Title from "../../components/atm.title/title";
 import { BubbleLink, BubbleWrapper } from "./link-bubble.style";
 import { VSeparator } from "../../components/atm.separator/v-separator";
 
-export const LinksDetails: React.FunctionComponent = props => {
+const LinksDetails: React.FunctionComponent = props => {
 	return (
 		<Layout>
 			<Content>
@@ -62,3 +62,5 @@ export const LinksDetails: React.FunctionComponent = props => {
 		</Layout>
 	);
 };
+
+export default LinksDetails;
