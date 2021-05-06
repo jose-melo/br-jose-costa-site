@@ -14,6 +14,10 @@ import { ZezaNeutralSvg } from "../assets/svg/zeza-neutral-svg";
 import { VSeparator } from "../components/atm.separator/v-separator";
 
 const ZezaPage: React.FC = () => {
+	const isBrowser = typeof window !== "undefined";
+
+	if (!isBrowser) return <></>;
+
 	const { width, height } = useWindowDimensions();
 
 	return (
