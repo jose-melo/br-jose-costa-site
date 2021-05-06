@@ -7,6 +7,7 @@ import { Content } from "../../components/atm.content/content";
 import { JoseImageStyled } from "./home-page-image";
 import { Link } from "../../components/atm.link/link";
 import { Paragraph } from "../../components/atm.paragraph/paragraph";
+import { BubbleLink } from "../links/link-bubble.style";
 
 export const HomeDetails: React.FunctionComponent = props => {
 	return (
@@ -37,6 +38,7 @@ export const HomeDetails: React.FunctionComponent = props => {
 								coisas interessantes. Por enquanto não tem nada aqui 😔, mas com
 								o passar do tempo vou adicionando mais coisas.
 							</Paragraph>
+							<BubbleLink href={"/links"}>Lista com alguns links</BubbleLink>
 						</Col>
 					</Row>
 				</Grid>

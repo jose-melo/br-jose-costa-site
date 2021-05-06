@@ -35,7 +35,7 @@ export const BubbleWrapper = styled.div<IBubbleWrapper>`
 	padding-left: 5px;
 	padding-right: 5px;
 	margin: auto;
-	font-family: Montserrat;
+	font-family: monospace;
 `;
 
 export const QuickReplyWrapper = styled.div`
