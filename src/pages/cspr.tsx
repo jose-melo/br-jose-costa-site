@@ -3,15 +3,17 @@ import * as React from "react";
 import { Suspense } from "react";
 import { PageSpin } from "../components/atm.spin/spin";
 import { browserCheck } from "../utils/hooks/browser-check";
+import useWindowDimensions from "../utils/hooks/use-window-dimension.hook";
 
-const LinksDetails = React.lazy(() => import("../modules/links/links-details"));
+const CSPRDetails = React.lazy(() => import("../modules/cspr/cspr-details"));
 
 const LinksPage: React.FC = () => {
 	const isBrowser = browserCheck();
 	if (!isBrowser) return <></>;
+	const { height } = useWindowDimensions();
 	return (
 		<Suspense fallback={<PageSpin />}>
-			<LinksDetails />
+			<CSPRDetails height={height} />
 		</Suspense>
 	);
 };
