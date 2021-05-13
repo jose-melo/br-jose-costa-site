@@ -1,0 +1,13 @@
+{
+	"chat": [
+		{
+			"id": "inicio_0",
+			"quickReply": {
+				"message": "Ok",
+				"action": {
+					"goto": "inicio_1"
+				}
+			}
+		}
+	]
+}
