@@ -38,7 +38,6 @@ const HomeDetails: React.FunctionComponent = props => {
 								coisas interessantes. Por enquanto não tem nada aqui 😔, mas com
 								o passar do tempo vou adicionando mais coisas.
 							</Paragraph>
-							<BubbleLink href={"/links"}>Lista com alguns links</BubbleLink>
 						</Col>
 					</Row>
 				</Grid>
