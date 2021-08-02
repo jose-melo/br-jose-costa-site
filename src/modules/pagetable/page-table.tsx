@@ -3,6 +3,7 @@ import useWindowDimensions from "../../utils/hooks/use-window-dimension.hook";
 import { Input } from 'antd';
 import { useState } from "react";
 import { useEffect } from "react";
+import styled from "styled-components";
 
 enum Bit {
 	Low = 0,
@@ -395,10 +396,10 @@ const useBitState = () => {
 	const setPmd = [setPmd0Color, setPmd1Color, setPmd2Color, setPmd3Color, setPmd4Color,
 		setPmd5Color, setPmd6Color, setPmd7Color,setPmd8Color,setPmd9Color,setPmd10Color,
 		setPmd11Color,setPmd12Color,setPmd13Color,setPmd14Color, setPmd15Color];
-	const pmdColorsSecond = [PmdColorSecond.Type1, PmdColorSecond.Type2, PmdColorSecond.Type4,
+	const pmdColorsSecond = [PmdColorSecond.Type1, PmdColorSecond.Type2, PmdColorSecond.Type3, PmdColorSecond.Type4,
 		PmdColorSecond.Type5, PmdColorSecond.Type6, PmdColorSecond.Type7, PmdColorSecond.Type8];
 
-		const pmdColorsLast = [PmdColorSecond.Type11, PmdColorSecond.Type21, PmdColorSecond.Type41,
+		const pmdColorsLast = [PmdColorSecond.Type11, PmdColorSecond.Type21, PmdColorSecond.Type31, PmdColorSecond.Type41,
 			PmdColorSecond.Type51, PmdColorSecond.Type61, PmdColorSecond.Type71, PmdColorSecond.Type81];
 	const pgdBit = [pgd0BitColor, pgd1BitColor, pgd2BitColor, pgd3BitColor, pgd4BitColor,
 	pgd5BitColor, pgd6BitColor, pgd7BitColor];
@@ -735,12 +736,37 @@ export const PageTableDetail: React.FunctionComponent = () =>  {
 				onB6Click={onB6Click}
 				onB5Click={onB5Click}
 			/>
-			<div onClick={() => allocate()}>Allocate</div>
-			<div onClick={() => modoLinux()}>Modo Linux</div>
+			<div style={{display: 'inline-block'}}>
+				<WrapperConsumer onClick={() => allocate()}>Allocate</WrapperConsumer>
+				<WrapperProducer onClick={() => modoLinux()}>Modo Linux</WrapperProducer>
+			</div>
 		</>
 	);
 
 }
+
+const commonStyle = `
+	border-radius: 100px;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-family: Montserrat;
+	cursor: pointer;
+	width: 200px;
+	margin: 10px;
+	text-align: center;
+`;
+
+const WrapperConsumer = styled.div`
+	background-color: #70c056;
+	${commonStyle}
+`
+const WrapperProducer = styled.div`
+	background-color: #AE87DD;
+	${commonStyle}
+`;
 
 interface SVGPageTableProps {
 	awidth: number;
