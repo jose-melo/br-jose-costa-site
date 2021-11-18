@@ -1,15 +1,25 @@
 import { Col, Divider, Row } from "antd";
 import Grid from "antd/lib/card/Grid";
 import Layout from "antd/lib/layout/layout";
-import React from "react";
+import React, { useState } from "react";
 import { GrayColor } from "../../utils/ui/color";
 import { Content } from "../../components/atm.content/content";
 import { JoseImageStyled } from "./home-page-image";
 import { Link } from "../../components/atm.link/link";
 import { Paragraph } from "../../components/atm.paragraph/paragraph";
 import { BubbleLink } from "../links/link-bubble.style";
+import { Languages, introduction, initialPage, langBtnText } from "./texts";
+
 
 const HomeDetails: React.FunctionComponent = props => {
+	const [lang, setLang] = useState(Languages.ptBr);
+
+	const changeLang = () => {
+		if(lang == Languages.ptBr)setLang(Languages.fr);
+		if(lang == Languages.fr)setLang(Languages.en);
+		if(lang == Languages.en)setLang(Languages.ptBr);
+	}
+
 	return (
 		<Layout>
 			<Content>
@@ -17,11 +27,16 @@ const HomeDetails: React.FunctionComponent = props => {
 					<Row>
 						<Col xs={4} lg={4} md={4}>
 							<Paragraph style={{ textAlign: "center" }}>
-								Página inicial ~ &nbsp; ☕ &nbsp;&nbsp;🎧
+								<Link href={"#"} onClick={() => changeLang()}>
+									{langBtnText[lang]}
+								</Link>	
+								&nbsp;&nbsp;&nbsp;
+								{initialPage[lang]} &nbsp; ~ &nbsp; ☕ &nbsp;&nbsp;🎧
 								&nbsp;&nbsp;💻&nbsp;&nbsp;&nbsp;
 								<Link href={"https://www.instagram.com/josemelocosta"}>
 									@josemelocosta
 								</Link>
+								
 							</Paragraph>
 							<JoseImageStyled size={170} />
 							<Divider
@@ -33,12 +48,8 @@ const HomeDetails: React.FunctionComponent = props => {
 								}}
 							/>
 							<Paragraph>
-								Esta é a landing-page para meus projetos pessoais! Aqui, vou
-								disponibilizar o acesso a alguns programas que fiz e testar
-								coisas interessantes. Por enquanto não tem nada aqui 😔, mas com
-								o passar do tempo vou adicionando mais coisas.
+								{introduction[lang]}	
 							</Paragraph>
-							<BubbleLink href={"/links"}>Lista com alguns links</BubbleLink>
 						</Col>
 					</Row>
 				</Grid>
