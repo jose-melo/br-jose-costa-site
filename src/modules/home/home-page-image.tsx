@@ -44,7 +44,8 @@ const JoseImage: React.FunctionComponent<JoseImageProps> = props => {
 				width: "100%",
 				marginLeft: "auto",
 				marginRight: "auto",
-				marginTop: "2em"
+				marginTop: "2em",
+				marginBottom: "2em"
 			}}
 			fluid={data.jose.childImageSharp.fluid}
 		/>
