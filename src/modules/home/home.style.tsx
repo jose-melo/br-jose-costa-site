@@ -70,3 +70,10 @@ export const CardDescription = styled.div<{ fontSize: string }>`
 `;
 
 
+export const CardSpinWrapper = styled.div`
+    width: 100px;
+	height: 100px;
+	margin: auto;
+    margin-top: 20%;
+`;
+
