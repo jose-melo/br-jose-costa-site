@@ -3,11 +3,11 @@ import Grid from "antd/lib/card/Grid";
 import Layout from "antd/lib/layout/layout";
 import React, { useState } from "react";
 import { Content } from "../../components/atm.content/content";
-import { JoseImageStyled } from "./home-page-image";
+import { JoseImageStyled } from "../home/home-page-image";
 import { Link } from "../../components/atm.link/link";
 import { Paragraph } from "../../components/atm.paragraph/paragraph";
-import { Languages, introduction, initialPage, langBtnText, catch_phrase, card1Title, card1, card2, card2Title, card3Title, card3, card4, card4Title, card1Link, card2Link, card3Link, card4Link, card5, card5Link, card5Title, card6, card6Link, card6Title, card7, card7Link, card7Title, card8, card8Link, card8Title, card10, card10Link, card10Title, card9, card9Link, card9Title} from "./texts";
-import { Title, Description, Card, CardGrid, CardTitle, CardDescription, CardSpinWrapper } from "./home.style";
+import { Languages, introduction, initialPage, langBtnText, catch_phrase, card1Title, card1, card2, card2Title, card3Title, card3, card4, card4Title, card1Link, card2Link, card3Link, card4Link, card5, card5Link, card5Title, card6, card6Link, card6Title, card7, card7Link, card7Title, card8, card8Link, card8Title, card10, card10Link, card10Title, card9, card9Link, card9Title} from "../home/texts";
+import { Title, Description, Card, CardGrid, CardTitle, CardDescription, CardSpinWrapper } from "../home/home.style";
 import useWindowDimensions from "../../utils/hooks/use-window-dimension.hook";
 import { PageSpin, Spin } from "../../components/atm.spin/spin";
 
@@ -20,6 +20,7 @@ export enum SubPage {
 
 const HomeDetails: React.FunctionComponent = props => {
 	const [lang, setLang] = useState(Languages.fr);
+	const [subPage, setSubPage] = useState(SubPage.Home);
 
 	const changeLang = () => {
 		if(lang == Languages.ptBr)setLang(Languages.fr);
@@ -31,6 +32,8 @@ const HomeDetails: React.FunctionComponent = props => {
 	if (!isBrowser) return <></>;
 	const {width, height} = useWindowDimensions();
 	
+	console.log('width ', width, 'height ', height);
+
 	const {imageSize, fontSizeDescription, fontSizeTitle} = getSizes(width, height);
 	const { title } = getText(width, height);
 
@@ -50,40 +53,25 @@ const HomeDetails: React.FunctionComponent = props => {
 							<Description fontSize={fontSizeDescription}>
 								{catch_phrase[lang]}	
 							</Description>
-							<CardGrid>
-								<Card href={card1Link}>
-									<CardTitle fontSize="1.3em">
-										{card1Title[lang]}
-									</CardTitle>
-									<CardDescription fontSize="1.3em">
-										{card1[lang]}
-									</CardDescription>
-								</Card>
-								<Card href={card2Link}>
-									<CardTitle fontSize="1.3em">
-										{card2Title[lang]}
-									</CardTitle>
-									<CardDescription fontSize="1.3em">
-										{card2[lang]}
-									</CardDescription>
-								</Card>
-								<Card href={card3Link}>
-									<CardTitle fontSize="1.3em">
-										{card3Title[lang]}
-									</CardTitle>
-									<CardDescription fontSize="1.3em">
-										{card3[lang]}
-									</CardDescription>
-								</Card>
-								<Card href={card4Link}>
-									<CardTitle fontSize="1.3em">
-										{card4Title[lang]}
-									</CardTitle>
-									<CardDescription fontSize="1.3em">
-										{card4[lang]}
-									</CardDescription>
-								</Card>
-							</CardGrid>
+
+                            <CardGrid>
+                                <Card href={card9Link}>
+                                    <CardTitle fontSize="1.3em">
+                                        {card9Title[lang]}
+                                    </CardTitle>
+                                    <CardDescription fontSize="1.3em">
+                                        {card9[lang]}
+                                    </CardDescription>
+                                </Card>
+                                <Card href={card10Link}>
+                                    <CardTitle fontSize="1.3em">
+                                        {card10Title[lang]}
+                                    </CardTitle>
+                                    <CardDescription fontSize="1.3em">
+                                        {card10[lang]}
+                                    </CardDescription>
+                                </Card>
+                            </CardGrid>
 						</Col>
 					</Row>
 				</Grid>
@@ -92,7 +80,8 @@ const HomeDetails: React.FunctionComponent = props => {
 	);
 };
 
-export interface GetSizesReturn { 
+
+interface GetSizesReturn { 
 	imageSize: number; 
 	fontSizeDescription: string; 
 	fontSizeTitle: string;
