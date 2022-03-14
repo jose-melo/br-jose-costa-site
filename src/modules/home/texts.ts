@@ -75,7 +75,7 @@ export const card8Title = {
 	[Languages.en]: "Page table"
 }
 
-export const card7Link = "/pagetable";
+export const card7Link = "/page_table";
 
 export const card7 = {
 	[Languages.ptBr]: "Simulação do funcionamento de uma tabela de páginas",
@@ -117,7 +117,7 @@ export const card5Title = {
 	[Languages.en]: "Producer-consumer v1"
 }
 
-export const card4Link = "#";
+export const card4Link = "/about_me";
 
 export const card4 = {
 	[Languages.ptBr]: "🤔",
@@ -145,7 +145,7 @@ export const card3Title = {
 	[Languages.en]: "GitHub"
 }
 
-export const card2Link = "#";
+export const card2Link = "/simulations";
 
 export const card2 = {
 	[Languages.ptBr]: "Aplicações interativas sobre computação",
