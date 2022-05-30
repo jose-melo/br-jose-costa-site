@@ -240,9 +240,9 @@ export const ConnectFour: React.FunctionComponent = () => {
 		if(result){
 			let str = ''
 			if(player == 1){
-				str = 'You lost :('
+				str = 'Red won!'
 			}else{
-				str = 'You won!'
+				str = 'Blue won!'
 			}
 
 			alert('The game is over: ' + str)
@@ -258,8 +258,8 @@ export const ConnectFour: React.FunctionComponent = () => {
 		console.log('player: ', player);
 		if(player == 1){
 			console.log('teste')
-			setBlock(true);
-			createPost();
+			//setBlock(true);
+			//createPost();
 		}
 
 	} ,  [player])
