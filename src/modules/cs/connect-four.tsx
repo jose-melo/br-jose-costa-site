@@ -176,7 +176,7 @@ export const ConnectFour: React.FunctionComponent = () => {
 	function createPost(){
 		axios
 		.post(baseURL, {
-			board: fen,
+			actions: actions,
 		})
 		.then((response) => {
 			console.log('response: ', response.data);
@@ -211,10 +211,11 @@ export const ConnectFour: React.FunctionComponent = () => {
 	const [block, setBlock] = useState(false);
 	const [fen, setFen] = useState("0000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
 	const [k, setK] = useState(1);
-
+	const [actions, setActions] = useState([])
 	const refs = useRef(new Array())
 
 	console.log('FEN: ', fen)
+	console.log('Actions: ', actions)
 	
 	const handleClick = (pos_x:number, pos_y:number, changeColor: (color : CellColors) => void) => {
 		console.log('CLIKED ', finished, block, player)
@@ -227,6 +228,7 @@ export const ConnectFour: React.FunctionComponent = () => {
 			return
 		}
 		const result = push(board1, setBoard1, board2, setBoard2, pos_x, cellHeight, setCellHeigth,legal_moves, setLegalMoves, fen, setFen, k, setK, player);
+		setActions([...actions, pos_x as never])
 
 		
 		if(player == 0){
