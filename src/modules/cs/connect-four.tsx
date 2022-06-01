@@ -169,7 +169,7 @@ export const ConnectFour: React.FunctionComponent = () => {
 	const isBrowser = typeof window !== "undefined";
 	if (!isBrowser) return <></>;
 	const {width, height} = useWindowDimensions();
-	const baseURL = "http://localhost:8296/connect_four";
+	const baseURL = "https://br-jmcosta-server.herokuapp.com/connect_four";
 	const test_board = "17900008100000000000003000000400000060000002500000000000000000000000000000000000000001"
 	
 	
@@ -258,8 +258,8 @@ export const ConnectFour: React.FunctionComponent = () => {
 		console.log('player: ', player);
 		if(player == 1){
 			console.log('teste')
-			//setBlock(true);
-			//createPost();
+			setBlock(true);
+			createPost();
 		}
 
 	} ,  [player])
